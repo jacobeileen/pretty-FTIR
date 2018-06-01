@@ -4,11 +4,7 @@ library(dplyr)
 
 ### Import and merge csv files ###
 
-# Specify folder with spectra files:
-setwd("~/directory_here")
-
-# Import and tidy:
-t <- list.files(pattern="*.csv")
+t <- list.files(path = ".", pattern="*.csv")
 
 spectra <- lapply(t, function(i) {
   read.csv(i, stringsAsFactors = FALSE)})
